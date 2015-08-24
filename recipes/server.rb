@@ -17,13 +17,11 @@
 # limitations under the License.
 #
 
-include_recipe "distsync::default"
+include_recipe 'distsync::default'
 
-config = Chef::EncryptedDataBagItem.load("distsync", "config")
+config = Chef::EncryptedDataBagItem.load('distsync', 'config')
 
 template "#{node[:distsync][:config_dir]}/server.conf" do
-  variables ({
-    :api_key => config["api_key"],
-    :shared_secret => config["shared_secret"],
-  })
+  variables(api_key: config['api_key'],
+            shared_secret: config['shared_secret'])
 end

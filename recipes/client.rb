@@ -17,26 +17,23 @@
 # limitations under the License.
 #
 
-include_recipe "distsync::default"
+include_recipe 'distsync::default'
 
 directory node[:distsync][:output_dir] do
   owner node[:distsync][:user]
   recursive true
 end
 
-config = Chef::EncryptedDataBagItem.load("distsync", "config")
+config = Chef::EncryptedDataBagItem.load('distsync', 'config')
 
 template "#{node[:distsync][:config_dir]}/client.conf" do
-  variables ({
-    :api_key => config["api_key"],
-    :shared_secret => config["shared_secret"],
-  })
+  variables(api_key: config['api_key'],
+            shared_secret: config['shared_secret'])
 end
 
 runit_service 'distsync' do
-  log_owner "daemon"
-  log_group "daemon"
+  log_owner 'daemon'
+  log_group 'daemon'
   finish_script false
   down true
 end
-

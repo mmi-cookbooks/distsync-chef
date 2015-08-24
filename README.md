@@ -11,19 +11,21 @@ Currently requires Linux AMD64 to run binaries. FreeBSD and Darwin (Mac OS X) bi
 Attributes
 ==========
 
-`node[:distsync][:shared_secret]`
-`node[:distsync][:api_key]`
+```
+node['distsync']['shared_secret']
+node['distsync']['api_key']
 
-`node[:distsync][:username]`
-`node[:distsync][:storage_bucket]`
+node['distsync']['username']
+node['distsync']['storage_bucket']
 
-`node[:distsync][:provider]`
-`node[:distsync][:region]`
+node['distsync']['provider']
+node['distsync']['region']
 
-`node[:distsync][:notify]`
-`node[:distsync][:storage]`
+node['distsync']['notify']
+node['distsync']['storage']
 
-`node[:distsync][:output_dir]`
+node['distsync']['output_dir']
+```
 
 https://github.com/pquerna/distsync#reference
 
