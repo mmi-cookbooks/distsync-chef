@@ -1,0 +1,12 @@
+# `~/.distsyncd`
+SharedSecret = "<%= @shared_secret %>"
+Encrypt = "AEAD_AES_128_CBC_HMAC_SHA_256"
+Notify = "<%= node[:distsync][:notify] %>"
+Storage = "<%= node[:distsync][:storage] %>"
+StorageBucket = "<%= node[:distsync][:storage_bucket] %>"
+OutputDir = "<%= node[:distsync][:output_dir] %>"
+
+[<%= node[:distsync][:provider] %>]
+  Region = "<%= node[:distsync][:region] %>"
+  Username = "<%= node[:distsync][:username] %>"
+  ApiKey = "<%= @api_key %>"
