@@ -1,3 +1,3 @@
 #!/bin/sh
-exec chpst -u <%= @node[:distsync][:user] %> distsync daemon\
-  -conf <%= @node[:distsync][:config_dir] %>/client.conf 2>&1
+exec chpst -u <%= @node['distsync']['user'] %> distsync daemon\
+  -conf <%= @node['distsync']['config_dir'] %>/client.conf 2>&1

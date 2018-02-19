@@ -19,14 +19,14 @@
 
 include_recipe 'distsync::default'
 
-directory node[:distsync][:output_dir] do
-  owner node[:distsync][:user]
+directory node['distsync']['output_dir'] do
+  owner node['distsync']['user']
   recursive true
 end
 
-config = Chef::EncryptedDataBagItem.load('distsync', 'config')
+config = data_bag_item('distsync', 'config')
 
-template "#{node[:distsync][:config_dir]}/client.conf" do
+template "#{node['distsync']['config_dir']}/client.conf" do
   variables(api_key: config['api_key'],
             shared_secret: config['shared_secret'])
 end

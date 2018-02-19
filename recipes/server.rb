@@ -19,9 +19,9 @@
 
 include_recipe 'distsync::default'
 
-config = Chef::EncryptedDataBagItem.load('distsync', 'config')
+config = data_bag_item('distsync', 'config')
 
-template "#{node[:distsync][:config_dir]}/server.conf" do
+template "#{node['distsync']['config_dir']}/server.conf" do
   variables(api_key: config['api_key'],
             shared_secret: config['shared_secret'])
 end

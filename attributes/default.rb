@@ -16,18 +16,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-default.distsync.notify         = 'CloudFilesPoll'
-default.distsync.storage        = 'CloudFiles'
+default['distsync']['notify']         = 'CloudFilesPoll'
+default['distsync']['storage']        = 'CloudFiles'
 
 # uid to run daemon as
-default.distsync.user           = "#{node.chef_environment}-dreadnot"
+default['distsync']['user']           = "#{node.chef_environment}-dreadnot"
 
-seed                            = '449dd170-d250-44fe-842a-e8837f513fac'
-default.distsync.username       = "distsyncUpload#{seed}"
-default.distsync.storage_bucket = "distsync-#{seed}"
+seed                                  = '449dd170-d250-44fe-842a-e8837f513fac'
+default['distsync']['username']       = "distsyncUpload#{seed}"
+default['distsync']['storage_bucket'] = "distsync-#{seed}"
 
-default.distsync.provider       = 'Rackspace' # {AWS, Rackspace}
-default.distsync.region         = 'ORD'       # {DFW, HKG, IAD, ORD, SYD}
+default['distsync']['provider']       = 'Rackspace' # {AWS, Rackspace}
+default['distsync']['region']         = 'ORD'       # {DFW, HKG, IAD, ORD, SYD}
 
-default.distsync.config_dir     = '/etc/distsync'
-default.distsync.output_dir     = '/opt/distsync'
+default['distsync']['config_dir']     = '/etc/distsync'
+default['distsync']['output_dir']     = '/opt/distsync'

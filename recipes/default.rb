@@ -17,6 +17,6 @@
 # limitations under the License.
 #
 
-directory node[:distsync][:config_dir]
+directory node['distsync']['config_dir']
 
 package 'distsync'
